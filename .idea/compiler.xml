@@ -9,7 +9,7 @@
         <module name="COMP2140-DECODERS" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="11">
       <module name="COMP2140-DECODERS" target="1.5" />
     </bytecodeTargetLevel>
   </component>
