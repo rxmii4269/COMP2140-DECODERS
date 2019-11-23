@@ -1,6 +1,6 @@
 # COMP2140-DECODERS
 
-## Waterford high School Student Management System
+## Waterford High School Student Management System
 
 We will be using Java as the codebase.
 
