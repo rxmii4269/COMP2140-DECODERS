@@ -6,6 +6,10 @@ public class Administration extends User {
 	private String password;
 	private String loginStatus;
 
+	public Administration(String user_name, String password) {
+		super(user_name, password);
+	}
+
 
 	public void disciplinaryAction() {
 

@@ -4,6 +4,10 @@ public class Teacher extends User {
 	private String lname;
 	private String homeRoom;
 
+	public Teacher(String user_name, String password) {
+		super(user_name, password);
+	}
+
 	public String searchStudent(String result) {
 		return result;
 	}
