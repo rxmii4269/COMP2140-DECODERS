@@ -7,5 +7,25 @@ public class HomeRoom {
 	public String homeRoomName;
 	public ArrayList<Student> listOfStudents;
 
+	public Homeroom(String teacherName, int amountOfStudents, String homeRoomName, ArrayList<Student> listOfStudents){
+		this.teacherName = teacherName;
+		this.amountOfStudents = amountOfStudents;
+		this.homeRoomName = homeRoomName;
+		this.listOfStudents = listOfStudents;
+	}
+
+	public String getTeacherName(){
+		return this.teacherName;
+
+	}
+
+	public int getNumofStudents(){
+		return this.amountOfStudents;
+	}
+
+	public void changeTeacher(String newteacher){
+		this.teacher = newteacher;
+	}
+
 
 }
