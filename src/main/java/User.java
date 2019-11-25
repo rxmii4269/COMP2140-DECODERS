@@ -3,7 +3,7 @@ public class User {
 	protected int userId = 0000;
 	protected String user_name;
 	protected String password;
-	private int i;
+
 	public static int count = 1;
 	protected String loginStatus;
 
@@ -14,7 +14,7 @@ public class User {
 	}
 
 	public static void login(String user_name,String password){
-		for (i=0; i<=count; i++){
+		for (int i=0; i<=count; i++){
 			System.out.println("Please Enter User name:");
 		}
 	}
