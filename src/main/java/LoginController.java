@@ -10,7 +10,7 @@ import java.util.ResourceBundle;
 
 
 public class LoginController implements Initializable {
-    LoginModel loginModel = new LoginModel();
+    private LoginModel loginModel = new LoginModel();
     @FXML
     private Label dbstatus;
     @FXML

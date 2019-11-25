@@ -1,13 +1,13 @@
+import Database.dbConnect;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import Database.dbConnect;
 public class LoginModel {
-    Connection  connection;
+    private Connection connection;
 
-    public LoginModel(){
+    LoginModel() {
         try{
             this.connection = dbConnect.getConnection();
 
@@ -18,33 +18,31 @@ public class LoginModel {
             System.exit(1);
         }
     }
-    public boolean isDBconnected(){
+
+    boolean isDBconnected() {
         return this.connection != null;
     }
 
-    public boolean isLogin(String user, String pass, String opt) throws Exception{
-        PreparedStatement pr = null;
-        ResultSet rs = null;
+    public void isLogin(String user, String pass, String opt) throws Exception {
         String sql =  "SELECT * FROM users where username = ? and password = ? and division = ?";
+        PreparedStatement pr = this.connection.prepareStatement(sql);
+        ResultSet rs;
         try{
-            pr = this.connection.prepareStatement(sql);
+
             pr.setString(1,user);
             pr.setString(2, pass);
             pr.setString(3,opt);
 
             rs = pr.executeQuery();
             boolean check1;
-            if(rs.next()){
-                return true;
+            while (rs.next()) {
+                String username = rs.getString("username");
+                String password = rs.getString("password");
+                String division = rs.getString("division");
+                System.out.format("%s, %s, %s\n", username, password, division);
             }
-            return false;
-        }catch(SQLException ex){
-            return false;
-        }finally {
-            {
-                pr.close();
-                rs.close();
-            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
         }
 
     }

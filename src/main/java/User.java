@@ -1,6 +1,6 @@
 public class User {
 
-	protected int userId = 0000;
+	protected int userId = 0;
 	protected String user_name;
 	protected String password;
 
@@ -18,7 +18,8 @@ public class User {
 			System.out.println("Please Enter User name:");
 		}
 	}
-	public Boolean verifyLogin() {
+
+	public Boolean verifyLogin(String user_name) {
 		if (true){
 			System.out.println("login Successful!");
 			return true;

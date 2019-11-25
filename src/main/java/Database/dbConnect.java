@@ -12,12 +12,14 @@ public class dbConnect {
 	private final static String CONN = "jdbc:mysql://54.84.172.164:3306/student_records";
 
 
-	private void getConnection() throws SQLException {
+	public static Connection getConnection() throws SQLException {
         try{
 	        Connection connection = DriverManager.getConnection(CONN, USERNAME, PASSWORD);
 	        System.out.println("Database Connected!");
+	        return connection;
         } catch (SQLException ex) {
 	        throw new SQLException("Cannot to the database", ex);
         }
-    }
+
+	}
 }
