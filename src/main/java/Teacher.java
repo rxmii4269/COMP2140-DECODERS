@@ -4,8 +4,9 @@ public class Teacher extends User {
 	private String lname;
 	private String homeRoom;
 
-	public Teacher(String user_name, String password) {
+	public Teacher(String user_name, String password, String homeRoom) {
 		super(user_name, password);
+		this.homeRoom = homeRoom;
 	}
 
 	public String searchStudent(String result) {
