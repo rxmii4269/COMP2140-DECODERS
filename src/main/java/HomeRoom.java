@@ -7,7 +7,8 @@ public class HomeRoom {
 	public String homeRoomName;
 	public ArrayList<Student> listOfStudents;
 
-	public Homeroom(String teacherName, int amountOfStudents, String homeRoomName, ArrayList<Student> listOfStudents){
+
+	public HomeRoom(String teacherName, int amountOfStudents, String homeRoomName, ArrayList<Student> listOfStudents) {
 		this.teacherName = teacherName;
 		this.amountOfStudents = amountOfStudents;
 		this.homeRoomName = homeRoomName;
@@ -23,8 +24,8 @@ public class HomeRoom {
 		return this.amountOfStudents;
 	}
 
-	public void changeTeacher(String newteacher){
-		this.teacher = newteacher;
+	public void changeTeacher(String newTeacher) {
+		this.teacherName = newTeacher;
 	}
 
 
