@@ -1,11 +1,30 @@
 public class User {
 
-	protected String userId;
+	protected int userId = 0000;
+	protected String user_name;
 	protected String password;
+	private int i;
+	public static int count = 1;
 	protected String loginStatus;
 
+	public User(String user_name, String password){
+		this.userId = count++;
+		this.password = password;
+		this.user_name = user_name;
+	}
 
+	public static void login(String user_name,String password){
+		for (i=0; i<=count; i++){
+			System.out.println("Please Enter User name:");
+		}
+	}
 	public Boolean verifyLogin() {
-		return true;
+		if (true){
+			System.out.println("login Successful!");
+			return true;
+		}else{
+			System.out.println("Incorrect Username or PassWord");
+			return false;
+		}
 	}
 }
