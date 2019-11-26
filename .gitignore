@@ -10,3 +10,7 @@
 # Sql script
 /src/main/java/Database/waterFord.sql
 *.class
+/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+/target/test-classes/createdFiles.lst
+/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+/target/test-classes/inputFiles.lst

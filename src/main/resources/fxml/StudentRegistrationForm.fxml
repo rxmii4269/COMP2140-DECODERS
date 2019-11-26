@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1"
+            fx:controller="StudentRegistrationController">
+    <VBox layoutX="7.0" layoutY="9.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="800.0"
+          AnchorPane.bottomAnchor="564.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0">
+        <padding>
+            <Insets left="50.0"/>
+        </padding>
+        <Label id="white" fx:id="formlabel" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity"
+               minHeight="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="631.0"
+               text="Welcome to WaterFord Registration System" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="21.0"/>
+            </font>
+            <padding>
+                <Insets left="130.0" right="50.0"/>
+            </padding>
+        </Label>
+    </VBox>
+    <Pane id="submitBtn" layoutX="107.0" layoutY="294.0" prefHeight="564.0" prefWidth="800.0"
+          stylesheets="@../styles/styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0">
+        <Label fx:id="EnterStudentInfoLabel" alignment="CENTER" layoutX="107.0" maxHeight="-Infinity"
+               maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="587.0"
+               text="Enter Student Information Below">
+            <font>
+                <Font name="System Bold" size="21.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="studentFirstName" layoutX="47.0" layoutY="90.0" prefHeight="26.0" prefWidth="173.0"
+                   promptText="First Name"/>
+        <TextField fx:id="studentLastName" layoutX="233.0" layoutY="90.0" prefHeight="26.0" prefWidth="173.0"
+                   promptText="Last Name"/>
+        <TextField fx:id="studentGender" layoutX="47.0" layoutY="145.0" prefHeight="26.0" prefWidth="173.0"
+                   promptText="Gender"/>
+        <TextField fx:id="studentDOB" layoutX="233.0" layoutY="145.0" prefHeight="26.0" prefWidth="173.0"
+                   promptText="Date of Birth"/>
+        <TextField fx:id="studentEmail" layoutX="233.0" layoutY="197.0" prefHeight="26.0" prefWidth="206.0"
+                   promptText="Email"/>
+        <TextField fx:id="studentContactNum" layoutX="47.0" layoutY="197.0" prefHeight="26.0" prefWidth="173.0"
+                   promptText="Contact Number"/>
+        <TextField fx:id="studentAge" layoutX="418.0" layoutY="145.0" prefHeight="26.0" prefWidth="43.0"
+                   promptText="Age"/>
+        <TextField fx:id="studentGrade" layoutX="47.0" layoutY="246.0" promptText="Grade"/>
+        <TextField fx:id="studentHomeRoom" layoutX="233.0" layoutY="247.0" promptText="Home Room"/>
+        <Button id="submitBtn" fx:id="submitButton" layoutX="47.0" layoutY="332.0" mnemonicParsing="false"
+                onAction="#handleSubmitButtonAction" styleClass="submitBtn" stylesheets="@../styles/styles.css"
+                text="Submit"/>
+        <Button id="cancelBtn" fx:id="cancelBtn" layoutX="121.0" layoutY="332.0" mnemonicParsing="false"
+                styleClass="cancelBtn" stylesheets="@../styles/styles.css" text="Cancel"/>
+    </Pane>
+</AnchorPane>
