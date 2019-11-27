@@ -23,7 +23,7 @@ public class LoginModel {
         return this.connection != null;
     }
 
-    public void isLogin(String user, String pass, String opt) throws Exception {
+    public boolean isLogin(String user, String pass, String opt) throws Exception {
         String sql =  "SELECT * FROM users where username = ? and password = ? and division = ?";
         PreparedStatement pr = this.connection.prepareStatement(sql);
         ResultSet rs;
@@ -45,5 +45,6 @@ public class LoginModel {
             ex.printStackTrace();
         }
 
+        return false;
     }
 }
