@@ -5,10 +5,10 @@
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
             minWidth="-Infinity" prefHeight="400.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1"
             fx:controller="StudentEditController">
-    <TableView fx:id="editTable" editable="true" layoutY="89.0" maxHeight="-Infinity" maxWidth="-Infinity"
-               minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0"
-               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-               AnchorPane.topAnchor="0.0">
+    <TableView fx:id="editTable" cache="true" cacheHint="QUALITY" depthTest="ENABLE" editable="true" layoutY="89.0"
+               maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+               pickOnBounds="false" prefHeight="351.0" prefWidth="900.0" AnchorPane.bottomAnchor="49.0"
+               AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columns>
             <TableColumn fx:id="firstNameColumn" prefWidth="75.0" sortable="false" text="First Name"/>
             <TableColumn fx:id="lastNameColumn" prefWidth="75.0" text="Last Name"/>
@@ -27,7 +27,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
         </columnResizePolicy>
     </TableView>
-    <ButtonBar layoutX="253.0" layoutY="346.0" prefHeight="40.0" prefWidth="294.0">
+    <ButtonBar layoutX="250.0" layoutY="360.0" prefHeight="40.0" prefWidth="294.0">
         <buttons>
             <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#handleCancelButton" prefHeight="25.0"
                     text="Cancel"/>

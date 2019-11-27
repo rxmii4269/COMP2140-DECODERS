@@ -36,7 +36,7 @@ public class StudentEditController implements Initializable {
 	private Window owner;
 	private Stage stage;
 	private ObservableList<StudentEditModel> studentEditModels = FXCollections.observableArrayList(
-			new StudentEditModel("Hi", "Bobo", "", "", "", "", "", ""
+			new StudentEditModel("Hi", "Bobo", "Male", "", "", "", "", ""
 					, ""),
 			new StudentEditModel("Hello", "Boo", "", "", "", "", "", "",
 					"")
