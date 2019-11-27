@@ -12,7 +12,7 @@ public class TestLogin extends Application {
 
     @Override
     public void start(Stage logstage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Admin.fxml"));
         logstage.setTitle("School Management System");
         logstage.setScene(new Scene(root, 800, 600));
         logstage.show();
