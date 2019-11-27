@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
+   <VBox layoutX="7.0" layoutY="9.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="800.0" AnchorPane.bottomAnchor="564.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <padding>
+         <Insets left="50.0" />
+      </padding>
+      <Label id="white" fx:id="formlabel" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="631.0" text="Welcome to WaterFord Registration System" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+         <padding>
+            <Insets left="130.0" right="50.0" />
+         </padding>
+      </Label>
+   </VBox>
+   <Label layoutX="143.0" layoutY="87.0" prefHeight="18.0" prefWidth="74.0" text="DB Status" />
+   <Label fx:id="dbstatus" layoutX="270.0" layoutY="87.0" prefHeight="18.0" prefWidth="260.0" />
+   <TextField fx:id="username" alignment="CENTER" layoutX="272.0" layoutY="154.0" prefHeight="26.0" prefWidth="260.0" promptText="Username" />
+   <Label layoutX="143.0" layoutY="158.0" prefHeight="18.0" prefWidth="74.0" text="Username" />
+   <PasswordField fx:id="password" alignment="CENTER" layoutX="272.0" layoutY="213.0" prefHeight="26.0" prefWidth="260.0" promptText="Password" />
+   <Label layoutX="143.0" layoutY="217.0" prefHeight="18.0" prefWidth="74.0" text="Password" />
+   <ComboBox fx:id="combobox" layoutX="272.0" layoutY="285.0" mouseTransparent="true" prefHeight="28.0" prefWidth="260.0" promptText="Admin / Teacher" />
+   <Button fx:id="loginButton" layoutX="270.0" layoutY="349.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="260.0" text="Login" />
+</AnchorPane>

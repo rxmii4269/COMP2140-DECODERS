@@ -49,7 +49,7 @@
         <TextField fx:id="studentAge" layoutX="418.0" layoutY="145.0" prefHeight="26.0" prefWidth="43.0"
                    promptText="Age"/>
         <TextField fx:id="studentGrade" layoutX="47.0" layoutY="246.0" promptText="Grade"/>
-        <TextField fx:id="studentHomeRoom" layoutX="233.0" layoutY="247.0" promptText="Home Room"/>
+        <TextField fx:id="studentHomeRoom" layoutX="234.0" layoutY="247.0" promptText="Home Room"/>
         <Button id="submitBtn" fx:id="submitButton" layoutX="47.0" layoutY="332.0" mnemonicParsing="false"
                 onAction="#handleSubmitButtonAction" styleClass="submitBtn" stylesheets="@../styles/styles.css"
                 text="Submit"/>
