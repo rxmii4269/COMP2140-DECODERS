@@ -36,10 +36,10 @@ public class StudentEditController implements Initializable {
 	private Window owner;
 	private Stage stage;
 	private ObservableList<StudentEditModel> studentEditModels = FXCollections.observableArrayList(
-			new StudentEditModel("Hi", "Bobo", "Male", "", "", "", "", ""
-					, ""),
-			new StudentEditModel("Hello", "Boo", "", "", "", "", "", "",
-					"")
+			new StudentEditModel("Hi", "Bobo", "Male", "11/22/1998", "21", "8764699382", "romaine", "34"
+					, "gf", "Gcity", "32g", "332"),
+			new StudentEditModel("Hello", "Boo", "Male", "july", "21", "223323", "romaine", "12",
+					"4t", "rt", "nbv", "rgh")
 	);
 
 	public void handleFinishButton(javafx.event.ActionEvent e) {

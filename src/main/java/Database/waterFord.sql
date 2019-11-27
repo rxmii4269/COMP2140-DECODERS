@@ -46,3 +46,20 @@ CREATE TABLE `users`
     `password` char(76)  NOT NULL
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8mb4;
+
+--
+-- Table structure for table `teacher`
+--
+DROP TABLE IF EXISTS `teacher`;
+CREATE TABLE `teacher`
+(
+    `id`            int(11)  NOT NULL,
+    `firstname`     char(35) NOT NULL default '',
+    `lastname`      char(35) NOT NULL default '',
+    `email_address` char(40) NOT NULL default '',
+    `dob`           char(40) NOT NULL default '',
+    `home_room`     char(35) NOT NULL default '',
+    PRIMARY KEY (id)
+) ENGINE = MyISAM
+  AUTO_INCREMENT = 4080
+  DEFAULT CHARSET = utf8mb4;
