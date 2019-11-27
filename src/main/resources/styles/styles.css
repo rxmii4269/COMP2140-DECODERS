@@ -1,13 +1,13 @@
-#submitBtn {
-    -fx-border-radius: 5px;
-}
-
 .submitBtn {
-    -fx-border-radius: 5px;
+    -fx-background-color: green;
 }
 
+.editBtn {
+    -fx-background-color: #2635ff;
+}
 .cancelBtn {
     -fx-border-radius: 5px;
+    -fx-background-color: red;
 
 }
 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="400.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1"
+            fx:controller="StudentEditController">
+    <TableView fx:id="editTable" editable="true" layoutY="89.0" maxHeight="-Infinity" maxWidth="-Infinity"
+               minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0"
+               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+               AnchorPane.topAnchor="0.0">
+        <columns>
+            <TableColumn fx:id="firstNameColumn" prefWidth="75.0" sortable="false" text="First Name"/>
+            <TableColumn fx:id="lastNameColumn" prefWidth="75.0" text="Last Name"/>
+            <TableColumn fx:id="genderColumn" prefWidth="75.0" text="Gender"/>
+            <TableColumn fx:id="dobColumn" prefWidth="89.0" sortable="false" text="Date of Birth"/>
+            <TableColumn fx:id="ageColumn" prefWidth="61.0" text="Age"/>
+            <TableColumn fx:id="contactColumn" prefWidth="78.0" text="Contact #"/>
+            <TableColumn fx:id="emailColumn" prefWidth="182.0" text="Email Address"/>
+            <TableColumn fx:id="gradeColumn" prefWidth="81.0" text="Grade"/>
+            <TableColumn fx:id="homeRoomColumn" prefWidth="95.0" text="Home Room"/>
+            <TableColumn fx:id="parentName" prefWidth="75.0" text="Parent/Guardian"/>
+            <TableColumn fx:id="parentAddress" prefWidth="75.0" text="Parent/Guardian Address"/>
+            <TableColumn fx:id="studentAddress" prefWidth="75.0" text="Student Address"/>
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+    <ButtonBar layoutX="253.0" layoutY="346.0" prefHeight="40.0" prefWidth="294.0">
+        <buttons>
+            <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#handleCancelButton" prefHeight="25.0"
+                    text="Cancel"/>
+            <Button fx:id="finishBtn" mnemonicParsing="false" onAction="#handleFinishButton" prefHeight="25.0"
+                    prefWidth="129.0" text="Finish"/>
+        </buttons>
+    </ButtonBar>
+</AnchorPane>
