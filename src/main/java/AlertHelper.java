@@ -10,6 +10,7 @@ class AlertHelper {
 		alert.setContentText(message);
 		alert.initOwner(owner);
 		alert.show();
+		owner.requestFocus();
 
 	}
 }

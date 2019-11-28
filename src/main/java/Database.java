@@ -1,7 +1,7 @@
-public class Database {
-	private String username;
-	private String password;
-	private String statement;
+import Database.dbConnect;
 
+public class Database {
+	private dbConnect dbconnect = new dbConnect();
+	private String statement;
 
 }

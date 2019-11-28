@@ -13,13 +13,14 @@ public class dbConnect {
 
 
 	public static Connection getConnection() throws SQLException {
-        try{
-	        Connection connection = DriverManager.getConnection(CONN, USERNAME, PASSWORD);
-	        System.out.println("Database Connected!");
-	        return connection;
-        } catch (SQLException ex) {
-	        throw new SQLException("Cannot to the database", ex);
-        }
+		try {
+			Connection connection = DriverManager.getConnection(CONN, USERNAME, PASSWORD);
+			System.out.println("Database Connected!");
+			return connection;
+		} catch (SQLException ex) {
+			throw new SQLException("Cannot connect to the database", ex);
+		}
 
 	}
+
 }

@@ -14,7 +14,7 @@ public class StudentEdit extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		Parent root = FXMLLoader.load(getClass().getResource("/fxml/StudentEdit.fxml"));
 		primaryStage.setTitle("Registration Form");
-		primaryStage.setScene(new Scene(root, 800, 400));
+		primaryStage.setScene(new Scene(root));
 		primaryStage.show();
 	}
 

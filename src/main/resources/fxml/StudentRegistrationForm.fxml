@@ -62,7 +62,7 @@
                    promptText="Email"/>
         <Button id="cancelBtn" fx:id="cancelBtn" layoutX="267.0" layoutY="400.0" mnemonicParsing="false"
                 onAction="#handleCancelButton" prefHeight="36.0" prefWidth="63.0" styleClass="cancelBtn"
-                stylesheets="@../styles/styles.css" text="Cancel" textFill="WHITE">
+                stylesheets="@../styles/styles.css" text="Clear" textFill="WHITE">
             <effect>
                 <DropShadow/>
             </effect>

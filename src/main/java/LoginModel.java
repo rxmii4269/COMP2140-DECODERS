@@ -4,7 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-public class LoginModel {
+
+class LoginModel {
     private Connection connection;
 
     LoginModel() {
@@ -23,7 +24,7 @@ public class LoginModel {
         return this.connection != null;
     }
 
-    public boolean isLogin(String user, String pass, String opt) throws Exception {
+    boolean isLogin(String user, String pass, String opt) throws Exception {
         String sql =  "SELECT * FROM users where username = ? and password = ? and division = ?";
         PreparedStatement pr = this.connection.prepareStatement(sql);
         ResultSet rs;
