@@ -1,61 +1,48 @@
+import Database.dbConnect;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import static javafx.scene.control.cell.TextFieldTableCell.forTableColumn;
 
 public class StudentEditController implements Initializable {
 
-	public TableView<StudentEditModel> editTable;
-	public TableColumn<StudentEditModel, String> firstNameColumn;
-	public TableColumn<StudentEditModel, String> lastNameColumn;
-	public TableColumn<StudentEditModel, String> genderColumn;
-	public TableColumn<StudentEditModel, String> dobColumn;
-	public TableColumn<StudentEditModel, String> ageColumn;
-	public TableColumn<StudentEditModel, String> contactColumn;
-	public TableColumn<StudentEditModel, String> emailColumn;
-	public TableColumn<StudentEditModel, String> gradeColumn;
-	public TableColumn<StudentEditModel, String> homeRoomColumn;
+	public TableView editTable;
+	public TableColumn<ObservableList, String> firstNameColumn;
+	public TableColumn<ObservableList, String> lastNameColumn;
+	public TableColumn<ObservableList, String> genderColumn;
+	public TableColumn<ObservableList, String> dobColumn;
+	public TableColumn<ObservableList, String> ageColumn;
+	public TableColumn<ObservableList, String> contactColumn;
+	public TableColumn<ObservableList, String> emailColumn;
+	public TableColumn<ObservableList, String> gradeColumn;
+	public TableColumn<ObservableList, String> homeRoomColumn;
 	public Button cancelBtn;
 	public Button finishBtn;
-	public TableColumn<StudentEditModel, String> parentName;
-	public TableColumn<StudentEditModel, String> parentAddress;
-	public TableColumn<StudentEditModel, String> studentAddress;
-	private Parent parent;
+	public TableColumn<ObservableList, String> parentName;
+	public TableColumn<ObservableList, String> parentAddress;
+	public TableColumn<ObservableList, String> studentAddress;
+
+	//private Parent parent;
 	private Window owner;
 	private Stage stage;
-	private ObservableList<StudentEditModel> studentEditModels = FXCollections.observableArrayList(
-			new StudentEditModel("Hi", "Bobo", "Male", "11/22/1998", "21", "8764699382", "romaine", "34"
-					, "gf", "Gcity", "32g", "332"),
-			new StudentEditModel("Hello", "Boo", "Male", "july", "21", "223323", "romaine", "12",
-					"4t", "rt", "nbv", "rgh")
-	);
-
-	public void handleFinishButton(javafx.event.ActionEvent e) {
-		owner = finishBtn.getScene().getWindow();
-		stage = (Stage) owner;
-		AlertHelper.showAlert(Alert.AlertType.INFORMATION, owner, "Changes Saved", "Saved Changes!");
-
-
-	}
-
-	public void handleCancelButton(javafx.event.ActionEvent e) {
-		owner = cancelBtn.getScene().getWindow();
-		stage = (Stage) owner;
-		stage.close();
-
-	}
+	private ObservableList<List<StringProperty>> data = FXCollections.observableArrayList();
+	private ObservableList<String> studentEditModels;
 
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -72,19 +59,47 @@ public class StudentEditController implements Initializable {
 		parentAddress.setCellFactory(forTableColumn());
 		studentAddress.setCellFactory(forTableColumn());
 
-		firstNameColumn.setCellValueFactory(new PropertyValueFactory<>("firstName"));
-		lastNameColumn.setCellValueFactory(new PropertyValueFactory<>("lastName"));
-		genderColumn.setCellValueFactory(new PropertyValueFactory<>("gender"));
-		dobColumn.setCellValueFactory(new PropertyValueFactory<>("dob"));
-		ageColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
-		contactColumn.setCellValueFactory(new PropertyValueFactory<>("contact"));
-		emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
-		gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
-		homeRoomColumn.setCellValueFactory(new PropertyValueFactory<>("home"));
-		parentName.setCellValueFactory(new PropertyValueFactory<>("parentName"));
-		parentAddress.setCellValueFactory(new PropertyValueFactory<>("parentAddress"));
-		studentAddress.setCellValueFactory(new PropertyValueFactory<>("studentAddress"));
+		try {
+			buildData();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
-		editTable.setItems(studentEditModels);
+		//editTable.setItems(studentEditModels);
+	}
+
+	private void buildData() throws SQLException {
+		studentEditModels = FXCollections.observableArrayList();
+//				StudentEditModel(getFirstName(),getLastName(),getGender(),getDOB(),getStudentAge(),getContactNum(),
+//						getEmail(),getStudentGrade(),getHomeRoom(),getParentname(),getParentaddress(),getStudentaddress())
+//
+
+		try {
+			Connection connection = dbConnect.getConnection();
+			String sql = "SELECT * FROM student";
+			PreparedStatement pr = connection.prepareStatement(sql);
+			ResultSet resultSet = pr.executeQuery();
+			System.out.println(resultSet.getString("name"));
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		}
+	}
+
+
+	public void handleFinishButton(javafx.event.ActionEvent e) {
+		owner = finishBtn.getScene().getWindow();
+		stage = (Stage) owner;
+		AlertHelper.showAlert(Alert.AlertType.INFORMATION, owner, "Changes Saved", "Saved Changes!");
+
+
+	}
+
+	public void handleCancelButton(javafx.event.ActionEvent e) {
+		owner = cancelBtn.getScene().getWindow();
+		stage = (Stage) owner;
+		stage.close();
+
 	}
 }
