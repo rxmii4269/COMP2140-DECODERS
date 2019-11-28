@@ -42,11 +42,13 @@ CREATE TABLE `student_records`
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users`
 (
-    `username` char(100) NOT NULL,
-    `password` char(76)  NOT NULL
+    `username` varchar(100) NOT NULL,
+    `password` varchar(76)  NOT NULL,
+    `division` varchar(45) NOT NULL
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8mb4;
 
+INSERT INTO users (username, password, division) VALUES ('lorne', '12345', 'Admin');
 --
 -- Table structure for table `teacher`
 --

@@ -1,10 +1,12 @@
 public enum option {
-    Admin, Teacher;
+    Teacher, Admin;
+
     private option(){}
 
     public String value(){
         return name();
     }
+
     public static option fromvalue(String v){
         return valueOf(v);
     }
