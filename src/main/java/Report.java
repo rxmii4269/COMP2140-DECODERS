@@ -4,8 +4,8 @@ public class Report {
 
 
 	public Report(String database, String reportType){
-		this.dataBase = dataBase;
 		this.reportType = reportType;
+		this.dataBase = database;
 	}
 	public void createReport() {
 

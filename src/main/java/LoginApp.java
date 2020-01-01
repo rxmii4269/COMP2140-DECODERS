@@ -12,7 +12,7 @@ public class LoginApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
         stage.setTitle("School Management System");
         stage.setScene(new Scene(root, 800, 600));
         stage.show();

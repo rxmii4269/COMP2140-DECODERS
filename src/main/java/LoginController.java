@@ -15,17 +15,24 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
+    public Label formlabel;
     LoginModel loginModel = new LoginModel();
+
     @FXML
     private Label dbstatus;
+
     @FXML
     private TextField username;
+
     @FXML
     private PasswordField password;
+
     @FXML
     private ComboBox<option> combobox;
+
     @FXML
     private Button loginButton;
+
     @FXML
     private Label loginStatus;
 
@@ -40,10 +47,10 @@ public class LoginController implements Initializable {
     @FXML
     public void Login(ActionEvent event){
         try {
-            if(this.loginModel.isLogin(this.username.getText(), this.password.getText(),((option)this.combobox.getValue()).toString())){
+            if(this.loginModel.isLogin(this.username.getText(), this.password.getText(), this.combobox.getValue().toString())){
                 Stage stage = (Stage)this.loginButton.getScene().getWindow();
                 stage.close();
-                switch (((option)this.combobox.getValue()).toString()){
+                switch (this.combobox.getValue().toString()){
                     case "Admin":
                         adminLogin();
                         break;
@@ -58,7 +65,7 @@ public class LoginController implements Initializable {
                     this.loginStatus.setText("Username or PassWord Incorrect!");
             }
 
-        }catch (Exception localException){
+        }catch (Exception ignored){
 
         }
     }
@@ -67,8 +74,8 @@ public class LoginController implements Initializable {
         try{
             Stage userStage = new Stage();
             FXMLLoader loader = new FXMLLoader();
-            Pane root = (Pane)loader.load(getClass().getResource("/fxml/teacher.fxml").openStream());
-            TeacherController tcontroller = (TeacherController)loader.getController();
+            Pane root = loader.load(getClass().getResource("/fxml/teacher.fxml").openStream());
+            TeacherController tcontroller = loader.getController();
 
             Scene scene = new Scene(root);
             userStage.setScene(scene);
@@ -86,8 +93,8 @@ public class LoginController implements Initializable {
         try{
             Stage adminStage = new Stage();
             FXMLLoader adminloader = new FXMLLoader();
-            Pane adminroot = (Pane)adminloader.load(getClass().getResource("/fxml/Admin.fxml").openStream());
-            AdminController adminController = (AdminController)adminloader.getController();
+            Pane adminroot = adminloader.load(getClass().getResource("/fxml/Admin.fxml").openStream());
+            AdminController adminController = adminloader.getController();
 
             Scene scene = new Scene(adminroot);
             adminStage.setScene(scene);

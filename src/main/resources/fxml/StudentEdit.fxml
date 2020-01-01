@@ -8,28 +8,26 @@
             fx:controller="StudentEditController">
     <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0"
                prefWidth="976.0">
-        <children>
-            <TableView fx:id="editTable" cache="true" cacheHint="QUALITY" depthTest="ENABLE" editable="true"
-                       maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pickOnBounds="false"
-                       prefHeight="600.0" prefWidth="700.0">
-                <columns>
-                    <TableColumn fx:id="firstNameColumn" minWidth="30.0" prefWidth="87.0" sortable="false"
-                                 text="First Name"/>
-                    <TableColumn fx:id="lastNameColumn" minWidth="40.0" prefWidth="53.0" text="Last Name"/>
-                    <TableColumn fx:id="genderColumn" prefWidth="75.0" text="Gender"/>
-                    <TableColumn fx:id="dobColumn" minWidth="50.0" prefWidth="-1.0" sortable="false"
-                                 text="Date of Birth"/>
-                    <TableColumn fx:id="ageColumn" prefWidth="58.0" text="Age"/>
-                    <TableColumn fx:id="contactColumn" minWidth="78.0" prefWidth="78.0" text="Emergency Contact #"/>
-                    <TableColumn fx:id="emailColumn" minWidth="50.0" prefWidth="148.0" text="Email Address"/>
-                    <TableColumn fx:id="gradeColumn" prefWidth="81.0" text="Grade"/>
-                    <TableColumn fx:id="homeRoomColumn" prefWidth="95.0" text="Home Room"/>
-                    <TableColumn fx:id="parentName" prefWidth="75.0" text="Parent/Guardian"/>
-                    <TableColumn fx:id="parentAddress" prefWidth="75.0" text="Parent/Guardian Address"/>
-                    <TableColumn fx:id="studentAddress" prefWidth="100.0" text="Student Address"/>
-                </columns>
-            </TableView>
-        </children>
+        <TableView fx:id="editTable" cache="true" cacheHint="QUALITY" depthTest="ENABLE" editable="true"
+                   maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pickOnBounds="false"
+                   prefHeight="600.0" prefWidth="700.0">
+            <columns>
+                <TableColumn fx:id="firstNameColumn" minWidth="30.0" prefWidth="87.0" sortable="false"
+                             text="First Name"/>
+                <TableColumn fx:id="lastNameColumn" minWidth="40.0" prefWidth="53.0" text="Last Name"/>
+                <TableColumn fx:id="genderColumn" prefWidth="75.0" text="Gender"/>
+                <TableColumn fx:id="dobColumn" minWidth="50.0" prefWidth="-1.0" sortable="false"
+                             text="Date of Birth"/>
+                <TableColumn fx:id="ageColumn" prefWidth="58.0" text="Age"/>
+                <TableColumn fx:id="contactColumn" minWidth="78.0" prefWidth="78.0" text="Emergency Contact #"/>
+                <TableColumn fx:id="emailColumn" minWidth="50.0" prefWidth="148.0" text="Email Address"/>
+                <TableColumn fx:id="gradeColumn" prefWidth="81.0" text="Grade"/>
+                <TableColumn fx:id="homeRoomColumn" prefWidth="95.0" text="Home Room"/>
+                <TableColumn fx:id="parentName" prefWidth="75.0" text="Parent/Guardian"/>
+                <TableColumn fx:id="parentAddress" prefWidth="75.0" text="Parent/Guardian Address"/>
+                <TableColumn fx:id="studentAddress" prefWidth="100.0" text="Student Address"/>
+            </columns>
+        </TableView>
     </StackPane>
     <ButtonBar layoutX="380.0" layoutY="555.0" prefHeight="31.0" prefWidth="204.0">
         <buttons>

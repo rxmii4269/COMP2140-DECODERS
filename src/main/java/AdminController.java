@@ -19,47 +19,57 @@ import java.util.ResourceBundle;
 
 public class AdminController implements Initializable {
 
+
     @FXML
     private TextField id;
     @FXML
     private TextField firstname;
     @FXML
     private TextField lastname;
+
     @FXML
     private TextField email;
+
     @FXML
     private DatePicker dob;
+
     @FXML
     private  TextField homeRoom;
     @FXML
     private TableView<Teacher> teacherTable;
+
     @FXML
     private TableColumn<Teacher,String> idcolumn;
+
     @FXML
     private TableColumn<Teacher,String> firstnameC;
+
     @FXML
     private TableColumn<Teacher,String> lastnameC;
+
     @FXML
     private TableColumn<Teacher,String> emailC;
+
     @FXML
     private TableColumn<Teacher,String> dobColumn;
+
     @FXML
     private TableColumn<Teacher,String> hrColumn;
 
-    private dbConnect dc;
     private ObservableList<Teacher> data;
-    private String sql = "SELECT * FROM teacher";
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        this.dc = new dbConnect();
+        dbConnect dc = new dbConnect();
     }
+
     @FXML
-    private void loadTeacherData(ActionEvent event) throws SQLException{
+    private void loadTeacherData(ActionEvent event) {
         try{
             Connection conn = dbConnect.getConnection();
             this.data = FXCollections.observableArrayList();
 
+            String sql = "SELECT * FROM teacher";
             ResultSet rs = conn.createStatement().executeQuery(sql);
             while(rs.next()){
                 this.data.add(new Teacher(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6)));
@@ -70,20 +80,21 @@ public class AdminController implements Initializable {
             System.err.println("Error"+e);
         }
 
-        this.idcolumn.setCellValueFactory(new PropertyValueFactory<Teacher, String>("ID"));
-        this.firstnameC.setCellValueFactory(new PropertyValueFactory<Teacher, String>("firstName"));
-        this.lastnameC.setCellValueFactory(new PropertyValueFactory<Teacher, String>("lastName"));
-        this.emailC.setCellValueFactory(new PropertyValueFactory<Teacher, String>("email"));
-        this.dobColumn.setCellValueFactory(new PropertyValueFactory<Teacher, String>("DOB"));
-        this.hrColumn.setCellValueFactory(new PropertyValueFactory<Teacher, String>("homeRoom"));
+        this.idcolumn.setCellValueFactory(new PropertyValueFactory<>("ID"));
+        this.firstnameC.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+        this.lastnameC.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+        this.emailC.setCellValueFactory(new PropertyValueFactory<>("email"));
+        this.dobColumn.setCellValueFactory(new PropertyValueFactory<>("DOB"));
+        this.hrColumn.setCellValueFactory(new PropertyValueFactory<>("homeRoom"));
 
         this.teacherTable.setItems(null);
         this.teacherTable.setItems(this.data);
     }
 
+
     @FXML
     private void addTeacher(ActionEvent event){
-        String sqlInsert = "INSERT INTO teacher(id,fname,lname,email,DOB,homeRoom) VALUES (?,?,?,?,?,?)";
+        String sqlInsert = "INSERT INTO teacher(id,firstname,lastname,email_address,DOB,home_room) VALUES (?,?,?,?,?,?)";
 
         try{
             Connection conn = dbConnect.getConnection();
@@ -104,6 +115,7 @@ public class AdminController implements Initializable {
             e.printStackTrace();
         }
     }
+
 
     @FXML
     private  void clearFields(ActionEvent event){

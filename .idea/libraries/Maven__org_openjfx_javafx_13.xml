@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Maven: org.openjfx:javafx:13">
+    <CLASSES />
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx/13/javafx-13-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx/13/javafx-13-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -7,8 +7,6 @@ import javafx.stage.Stage;
 
 public class StudentRegistrationApplication extends Application {
 	StudentRegistrationController controller;
-	private Parent root;
-	private Stage window;
 
 	public static void main(String[] args) {
 		launch(args);
@@ -16,8 +14,7 @@ public class StudentRegistrationApplication extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		window = primaryStage;
-		root = FXMLLoader.load(getClass().getResource("/fxml/StudentRegistrationForm.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/fxml/StudentRegistrationForm.fxml"));
 		primaryStage.setTitle("Registration Form");
 		primaryStage.setScene(new Scene(root, 800, 600));
 		primaryStage.setResizable(false);

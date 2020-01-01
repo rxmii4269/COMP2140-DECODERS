@@ -15,27 +15,6 @@ public class StudentEditModel {
 	private SimpleStringProperty studentAddress;
 
 
-//	StudentEditModel(String firstname, String lastname, String gender, String dob, String age,
-//	                 String emergencyContact, String email, String grade, String homeroom, String parent,
-//	                 String parentAddress, String studentAddress) {
-//		this.firstname = new SimpleStringProperty(firstname);
-//		this.lastname = new SimpleStringProperty(lastname);
-//		this.gender = new SimpleStringProperty(gender);
-//		this.dob = new SimpleStringProperty(dob);
-//		this.age = new SimpleStringProperty(age);
-//		this.emergencyContact = new SimpleStringProperty(emergencyContact);
-//		this.email = new SimpleStringProperty(email);
-//		this.grade = new SimpleStringProperty(grade);
-//		this.homeroom = new SimpleStringProperty(homeroom);
-//		this.parent = new SimpleStringProperty(parent);
-//		this.parentAddress = new SimpleStringProperty(parentAddress);
-//		this.studentAddress = new SimpleStringProperty(studentAddress);
-//
-//	}
-
-
-
-
 
 	public String getFirstName() {
 		return firstname.get();

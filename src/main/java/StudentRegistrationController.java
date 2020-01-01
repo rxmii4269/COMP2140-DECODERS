@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.stage.Window;
 
 import java.io.IOException;
@@ -33,8 +32,6 @@ public class StudentRegistrationController {
 	public TextField parentName;
 	public TextField parentAddress;
 	public TextField studentAddress;
-	private Stage stage = new Stage(StageStyle.DECORATED);
-	private Parent parent;
 	private Window owner;
 	private StudentEditController controllers = new StudentEditController();
 
@@ -167,8 +164,8 @@ public class StudentRegistrationController {
 	}
 
 	private void fxmlLoader() throws IOException {
-		parent = FXMLLoader.load(getClass().getResource("/fxml/StudentEdit.fxml"));
-		stage = new Stage();
+		Parent parent = FXMLLoader.load(getClass().getResource("/fxml/StudentEdit.fxml"));
+		Stage stage = new Stage();
 		stage.setTitle("Edit Student Information");
 		stage.setScene(new Scene(parent));
 		stage.setResizable(false);
